@@ -1,0 +1,13 @@
+function fearNotLetter(str) {
+  let arr =[]
+  for(let i = 0;i<str.length;i++){
+    arr[str.charCodeAt(i)] = str[i]
+  }
+  let start = str.charCodeAt(0);
+  let end = str.charCodeAt(str.length-1);
+  for(let i = start;i<=end;i++){
+    if(!arr[i]) return String.fromCharCode(i);
+  }
+}
+
+fearNotLetter("abce");
