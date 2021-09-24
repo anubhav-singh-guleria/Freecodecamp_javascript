@@ -1,0 +1,16 @@
+function pairElement(str) {
+  let obj = {
+    "G" : "C",
+    "C" : "G",
+    "A" : "T",
+    "T" : "A"
+  }
+  let arr = [];
+  for(let i = 0;i<str.length;i++){
+      arr[i] = [str[i],obj[str[i]]];
+      
+  }
+  return arr;
+}
+
+pairElement("GCG");
