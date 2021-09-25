@@ -1,0 +1,12 @@
+function convertHTML(str) {
+  let ans = str;
+  let obj = {
+    ">" : "&gt;",
+    "<" : "&lt;",
+    "&" : "&amp;",
+    '"' : '&quot;',
+    "'" : "&apos;"
+  }
+  return str.replace(/([&<>\"'])/g, match => obj[match]);
+}
+(convertHTML("Dolce & Gabbana"));
