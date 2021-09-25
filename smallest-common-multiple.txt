@@ -1,0 +1,16 @@
+function smallestCommons(arr) {
+  const [min, max] = arr.sort((a, b) => a - b);
+  let range = []
+   for(let i = min;i<=max;i++){
+    range.push(i)
+  }
+  const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+  const lcd = (a,c) => (a*c)/gcd(a,c);
+  let a = range[0];
+  for(let i = 1;i<range.length;i++){
+    a = lcd(a,range[i]);
+  }
+  return a;
+}
+
+smallestCommons([2,10]);
