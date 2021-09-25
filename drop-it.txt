@@ -1,0 +1,17 @@
+function dropElements(arr, func) {
+  let ans = [];
+  let i;
+  let bool = false;
+  for(i = 0;i<arr.length;i++){
+    if(func(arr[i])===true){
+      bool = true;
+      break;
+    }
+  }
+  for(let j = i;j<arr.length;j++){
+    ans.push(arr[j]);
+  }
+  return ans;
+}
+
+console.log(dropElements([1, 2, 3,4], function(n) {return n >= 3;}));
